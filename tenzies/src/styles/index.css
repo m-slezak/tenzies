@@ -1,0 +1,20 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+  background: #0B2434;
+  padding: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main{
+  background: #F5F5F5;
+  padding: 30px 20px;
+  height: 400px;
+  width: 80vb;
+  border-radius: 10px;
+
+}
+

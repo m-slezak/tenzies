@@ -1,11 +1,10 @@
 
 
 function App() {
-
   return (
-    <div >
-      <h1>Siema</h1>
-    </div>
+   <main>
+    <h1>Siema!</h1>
+   </main>
   )
 }
 
