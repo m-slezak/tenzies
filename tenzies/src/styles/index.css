@@ -15,6 +15,17 @@ main{
   height: 400px;
   width: 80vb;
   border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
+.dieContainer{
+  display: grid;
+  grid-template: auto auto/repeat(5, 1fr);
+  gap: 20px;
+
 
 }
 

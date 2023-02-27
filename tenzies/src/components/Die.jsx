@@ -5,8 +5,8 @@ const Die = (props) => {
     const number = Math.floor(Math.random() * 6) + 1
   return (
     <>
-        <div>
-            {number}
+        <div className={styles.box}>
+            <h2 className={styles.number}>{number}</h2>
         </div>
     </>
   )

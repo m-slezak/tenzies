@@ -1,15 +1,21 @@
 import Die from "./components/Die"
 
 function App() {
+
+
   return (
    <main>
-   <section>
-    <Die/>
-    <Die/>
-    <Die/>
-    <Die/>
-    <Die/>
-    <Die/>
+   <section className="dieContainer">
+    <Die />
+    <Die />
+    <Die />
+    <Die />
+    <Die />
+    <Die />
+    <Die />
+    <Die />
+    <Die />
+    <Die />
    </section>
 
 
