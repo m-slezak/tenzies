@@ -1,9 +1,18 @@
-
+import Die from "./components/Die"
 
 function App() {
   return (
    <main>
-    <h1>Siema!</h1>
+   <section>
+    <Die/>
+    <Die/>
+    <Die/>
+    <Die/>
+    <Die/>
+    <Die/>
+   </section>
+
+
    </main>
   )
 }
