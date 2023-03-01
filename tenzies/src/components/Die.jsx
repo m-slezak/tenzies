@@ -1,15 +1,17 @@
-import React from 'react'
-import styles from './die.module.css'
+import React from "react";
 
 const Die = (props) => {
-    const number = Math.floor(Math.random() * 6) + 1
+  const styles = {
+    backgroundColor: props.isHeld ? "#59E391" : "white",
+  };
+
   return (
     <>
-        <div className={styles.box}>
-            <h2 className={styles.number}>{number}</h2>
-        </div>
+      <div className="box" style={styles} onClick={props.holdDice}>
+        <h2 className="number">{props.value}</h2>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Die
+export default Die;
