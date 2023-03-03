@@ -1,13 +1,21 @@
+import { useState, useEffect } from "react";
 import { nanoid } from "nanoid";
 import Die from "./components/Die";
-import { useState, useEffect } from "react";
+import Confetti from "react-confetti";
 
 function App() {
   const [dices, setDices] = useState(allNewDice());
   const [tenzies, setTenzies] = useState(false);
 
   useEffect(() => {
-    console.log("dice state changed");
+    const allIsHeld = dices.every((die) => die.isHeld);
+    const firstDice = dices[0].value;
+    const allSameDice = dices.every((die) => firstDice === die.value);
+
+    if (allSameDice && allIsHeld) {
+      console.log("You won");
+      setTenzies(true);
+    }
   }, [dices]);
 
   function generateNewDie() {
@@ -39,6 +47,11 @@ function App() {
       })
     );
   }
+  function newGame() {
+    setDices((oldDices) => {
+      [];
+    });
+  }
 
   function selectedDices() {}
 
@@ -53,8 +66,9 @@ function App() {
 
   return (
     <main>
+      {tenzies && <Confetti />}
       <section className="dieContainer">{dice}</section>
-      <button onClick={toggleRoll}>Roll</button>
+      <button onClick={toggleRoll}>{tenzies ? "New Game" : "Roll"}</button>
     </main>
   );
 }
