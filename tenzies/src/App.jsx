@@ -33,13 +33,20 @@ function App() {
     }
     return newDice;
   }
+
   function toggleRoll() {
-    setDices((oldDices) =>
-      oldDices.map((dice) => {
-        return dice.isHeld ? dice : generateNewDie();
-      })
-    );
+    if (!tenzies) {
+      setDices((oldDices) =>
+        oldDices.map((dice) => {
+          return dice.isHeld ? dice : generateNewDie();
+        })
+      );
+    } else {
+      setTenzies(false);
+      setDices(allNewDice());
+    }
   }
+
   function holdDice(id) {
     setDices((oldDices) =>
       oldDices.map((dice) => {
@@ -47,13 +54,6 @@ function App() {
       })
     );
   }
-  function newGame() {
-    setDices((oldDices) => {
-      [];
-    });
-  }
-
-  function selectedDices() {}
 
   const dice = dices.map((dice) => (
     <Die
@@ -67,6 +67,11 @@ function App() {
   return (
     <main>
       {tenzies && <Confetti />}
+      <h1>Tenzies</h1>
+      <p>
+        Roll until all dice are the same. Click each die to freeze it at its
+        current value between rolls.
+      </p>
       <section className="dieContainer">{dice}</section>
       <button onClick={toggleRoll}>{tenzies ? "New Game" : "Roll"}</button>
     </main>
